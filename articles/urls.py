@@ -16,7 +16,7 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('register/', UserRegisterView.as_view(), name="register"),
     path('login/', LoginView.as_view(), name="logins"),
-    path('profile/', log.as_view(), name="log"),
+    path('profile/', views.log, name="log"),
     
     path('admin/', admin.site.urls),
     

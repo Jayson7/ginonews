@@ -9,17 +9,28 @@ def index(request):
     
     return render(request, 'index.html')
 
+
 def logins(request):
     
     return render(request, 'login.html')
 
 
+@login_required(login_url="/login/")
+def log(request):
 
-class log(ListView):
-    model = logger
-    template_name = 'profile.html'
-    ordering = ['-date']
-
+    logss = logger.objects.all()
+    firstname = logss[0].first_name
+    lastname = logss[0].last_name
+    phone = logss[0].phone_number
+    occupation = logss[0].occupation
+    email = logss[0].email
+    username = logss[0].username
+   
+    return render(request, 'profile.html', {"logss": logss, "firstname": firstname,": lastname": lastname,
+    "occupation": occupation,
+    "email": email,
+    "username": username,
+    "phone": phone })
 
 
 
