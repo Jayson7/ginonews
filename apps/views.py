@@ -9,17 +9,16 @@ def index(request):
     
     return render(request, 'index.html')
 
+
 def logins(request):
     
     return render(request, 'login.html')
 
 
 
-class log(ListView):
-    model = logger
-    template_name = 'profile.html'
-    ordering = ['-date']
-
+def log(request):
+    logss = logger.objects.all()
+    return render(request, 'profile.html', {"logss": logss})
 
 
 

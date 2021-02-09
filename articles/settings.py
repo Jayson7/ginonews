@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [ 
+    'bootstrap4',
     'crispy_forms',
     'apps',
     'django.contrib.admin',
@@ -119,3 +120,5 @@ LOGIN_REDIRECT_URL ='home'
 LOGOUT_REDIRECT_URL = 'index'
 REGISTER_REDIRECT_URL ='/logins/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'apps/staticfiles'),)
+
+BOOTSTRAP4 = {    'include_jquery': True,    }
